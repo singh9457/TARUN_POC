@@ -1,0 +1,56 @@
+pipeline {
+    agent {label 'slave'}
+	
+    stages {
+		
+		stage('Launching AWS INFRASTRUCTURE'){
+			steps{
+				dir("$WORKSPACE/Tarun_Test/dvp-environment/infra/terraformst/dvp-environment/infra/terraform") {
+					echo '#######################  TERRAFORM  STARTED  #########################'
+					 writeFile file: 'terraform.tfvars', text: params.TERAFORM_TFVARS_CONTENT
+					
+					sh "terraform init"
+						
+					sh "terraform $TERRAFORM_COMMAND"
+
+					sh "aws s3 cp terraform.tfstate s3://$BACKUP_S3_BUCKET/tfstates-bkp/$JOB_NAME/`date +%d-%m-%Y-%H-%M`-terraform.tfstate"
+					
+					sh "aws s3 cp terraform.tfstate s3://$BACKUP_S3_BUCKET/tfstates-bkp/$JOB_NAME/latest/terraform.tfstate"
+					
+					echo '----------------------- TERRAFORM FINISHED ------------------------'
+				
+				}
+					
+			}
+		}
+		
+		stage('COPY FILES TO MASTER'){
+			when {
+                expression { params.TERRAFORM_COMMAND != 'plan' }
+            }
+		    steps{
+		        node('slave') {
+					dir("$WORKSPACE") {
+					   sh '''
+							cp $WORKSPACE/../infra-json/$JOB_NAME.json $WORKSPACE/
+							ls $WORKSPACE
+						'''						  
+						stash name: "files", includes: "$JOB_NAME"+".json"
+					} 
+                }
+                node('master') {
+					dir("$WORKSPACE") {
+						unstash "files"
+						 powershell '''
+						    Copy-item -Force -Verbose ${env:WORKSPACE}/${env:JOB_NAME}.json -Destination ${env:WORKSPACE}/../infra-json/${env:JOB_NAME}.json
+                    		  
+                    		dir ${env:WORKSPACE}/../infra-json/
+            			  '''
+					}
+                }					
+		    }	
+
+		}
+		
+	}
+}	

@@ -1,0 +1,454 @@
+#Create Parameter Store for Infra
+resource "aws_ssm_parameter" "frost_subdir" {
+  name  = "/${var.environment_tag}/${var.product_tag}/frost_subdir"
+  type  = "String"
+  value = "${var.extra_infra_outputs["frost_subdir"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "lor_subdir" {
+  name  = "/${var.environment_tag}/${var.product_tag}/lor_subdir"
+  type  = "String"
+  value = "${var.extra_infra_outputs["lor_subdir"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "frost_dbname" {
+  name  = "/${var.environment_tag}/${var.product_tag}/frost_dbname"
+  type  = "String"
+  value = "${var.extra_infra_outputs["frost_dbname"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "lor_dbname" {
+  name  = "/${var.environment_tag}/${var.product_tag}/lor_dbname"
+  type  = "String"
+  value = "${var.extra_infra_outputs["lor_dbname"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "admin_portal_dbname" {
+  name  = "/${var.environment_tag}/${var.product_tag}/admin_portal_dbname"
+  type  = "String"
+  value = "${var.extra_infra_outputs["admin_portal_dbname"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "mysql_assessment_dbname" {
+  name  = "/${var.environment_tag}/${var.product_tag}/mysql_assessment_dbname"
+  type  = "String"
+  value = "${var.extra_infra_outputs["mysql_assessment_dbname"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "oauth_dbname" {
+  name  = "/${var.environment_tag}/${var.product_tag}/oauth_dbname"
+  type  = "String"
+  value = "${var.extra_infra_outputs["oauth_dbname"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "analytics_pgdb_name" {
+  name  = "/${var.environment_tag}/${var.product_tag}/analytics_pgdb_name"
+  type  = "String"
+  value = "${var.extra_infra_outputs["analytics_pgdb_name"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "frost_api_url" {
+  name  = "/${var.environment_tag}/${var.product_tag}/frost_api_url"
+  type  = "String"
+  value = "${var.extra_infra_outputs["frost_api_url"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "lor_api_url" {
+  name  = "/${var.environment_tag}/${var.product_tag}/lor_api_url"
+  type  = "String"
+  value = "${var.extra_infra_outputs["lor_api_url"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "oauth_url" {
+  name  = "/${var.environment_tag}/${var.product_tag}/oauth_url"
+  type  = "String"
+  value = "${var.extra_infra_outputs["oauth_url"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "analytics_api_url" {
+  name  = "/${var.environment_tag}/${var.product_tag}/analytics_api_url"
+  type  = "String"
+  value = "${var.extra_infra_outputs["analytics_api_url"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "analytics_api_port" {
+  name  = "/${var.environment_tag}/${var.product_tag}/analytics_api_port"
+  type  = "String"
+  value = "${var.extra_infra_outputs["analytics_api_port"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "oauth_subdir" {
+  name  = "/${var.environment_tag}/${var.product_tag}/oauth_subdir"
+  type  = "String"
+  value = "${var.extra_infra_outputs["oauth_subdir"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "ses_smtp_from_address" {
+  name  = "/${var.environment_tag}/${var.product_tag}/ses_smtp_from_address"
+  type  = "String"
+  value = "${var.extra_infra_outputs["ses_smtp_from_address"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "ses_smtp_host" {
+  name  = "/${var.environment_tag}/${var.product_tag}/ses_smtp_host"
+  type  = "String"
+  value = "${var.extra_infra_outputs["ses_smtp_host"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "ssh_keypair_path" {
+  name  = "/${var.environment_tag}/${var.product_tag}/ssh_keypair_path"
+  type  = "String"
+  value = "/home/ec2-user/.ssh/ssh-keys/${var.aws_key_pair_name}.pem"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "domain_name" {
+  name  = "/${var.environment_tag}/${var.product_tag}/domain_name"
+  type  = "String"
+  value = "${var.domain_name}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+#Create Parameter Store for Frost
+resource "aws_ssm_parameter" "frost_identity_auth_enable" {
+  name  = "/${var.environment_tag}/${var.product_tag}/frost_identity_auth_enable"
+  type  = "String"
+  value = "${var.extra_frost_outputs["frost_identity_auth_enable"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "quad_assessment_apiendpoint" {
+  name  = "/${var.environment_tag}/${var.product_tag}/quad_assessment_apiendpoint"
+  type  = "SecureString"
+  value = "${var.extra_frost_outputs["quad_assessment_apiendpoint"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+#Create Parameter Store for LOR
+resource "aws_ssm_parameter" "lor_identity_auth_enable" {
+  name  = "/${var.environment_tag}/${var.product_tag}/lor_identity_auth_enable"
+  type  = "String"
+  value = "${var.extra_lor_outputs["lor_identity_auth_enable"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "lor_con_version" {
+  name  = "/${var.environment_tag}/${var.product_tag}/lor_con_version"
+  type  = "String"
+  value = "${var.extra_lor_outputs["lor_con_version"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "lor_caseservers_taxonomy" {
+  name  = "/${var.environment_tag}/${var.product_tag}/lor_caseservers_taxonomy"
+  type  = "String"
+  value = "${var.extra_lor_outputs["lor_caseservers_taxonomy"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+#Create Parameter Store for QUAD
+
+resource "aws_ssm_parameter" "quad_base_url" {
+  name  = "/${var.environment_tag}/${var.product_tag}/quad_base_url"
+  type  = "String"
+  value = "${var.extra_quad_outputs["quad_base_url"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "quadapp_subdir" {
+  name  = "/${var.environment_tag}/${var.product_tag}/quadapp_subdir"
+  type  = "String"
+  value = "${var.extra_quad_outputs["quadapp_subdir"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "quadapi_subdir" {
+  name  = "/${var.environment_tag}/${var.product_tag}/quadapi_subdir"
+  type  = "String"
+  value = "${var.extra_quad_outputs["quadapi_subdir"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "quad_dbname" {
+  name  = "/${var.environment_tag}/${var.product_tag}/quad_dbname"
+  type  = "String"
+  value = "${var.extra_quad_outputs["quad_dbname"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+#Create Parameter Store for ACMT
+
+resource "aws_ssm_parameter" "acmt_app_url" {
+  name  = "/${var.environment_tag}/${var.product_tag}/acmt_app_url"
+  type  = "String"
+  value = "${var.extra_acmt_outputs["acmt_app_url"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "acmt_api_url" {
+  name  = "/${var.environment_tag}/${var.product_tag}/acmt_api_url"
+  type  = "String"
+  value = "${var.extra_acmt_outputs["acmt_api_url"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "acmt_standard_url" {
+  name  = "/${var.environment_tag}/${var.product_tag}/acmt_standard_url"
+  type  = "String"
+  value = "${var.extra_acmt_outputs["acmt_standard_url"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "acmt_standard_api_url" {
+  name  = "/${var.environment_tag}/${var.product_tag}/acmt_standard_api_url"
+  type  = "String"
+  value = "${var.extra_acmt_outputs["acmt_standard_api_url"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
+
+resource "aws_ssm_parameter" "acmt_taxonomy_json" {
+  name  = "/${var.environment_tag}/${var.product_tag}/acmt_taxonomy_json"
+  type  = "String"
+  value = "${var.extra_acmt_outputs["acmt_taxonomy_json"]}"
+  overwrite = "true"
+  tags = {
+    Environment = "${var.environment_tag}"
+	"Product Name" = "${var.product_tag}"
+	"Project Code" = "${var.project_tag}"
+	"Project Manager" = "${var.other_tags["Proj_mgr"]}"
+	"Project Code" = "${var.project_tag}"
+  }
+}
